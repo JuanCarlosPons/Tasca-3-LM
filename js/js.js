@@ -9,6 +9,6 @@ window.onload = function(){
    gestionarXml(this);
   }
  };
- xhttp.open("GET", "xml/preguntas.xml", true);
+ xhttp.open("GET", "xml/questions.xml", true);
  xhttp.send();
 }
