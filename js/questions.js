@@ -10,3 +10,7 @@ window.onload = function(){
  xhttp.open("GET", "xml/questions.xml", true);
  xhttp.send();
 }
+
+function gestionarXml(dadesXml){
+ var xmlDoc = dadesXml.responseXML; 
+}
