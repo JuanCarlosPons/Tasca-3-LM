@@ -1,3 +1,5 @@
+var respuestasCheckbox1 = []
+var respuestasCheckbox2 = []
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos, entre otras acciones.
 
