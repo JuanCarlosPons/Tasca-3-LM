@@ -21,6 +21,18 @@ window.onload = function(){
 // xmlDOC es el documento leido XML.
 function gestionarXml(dadesXml){
  var xmlDoc = dadesXml.responseXML; //Parse XML to xmlDoc
+ 
+ //TEXT1
+ //Recuperamos el título y la respuesta correcta de Input, guardamos el texto secreto
+ var pregunta001=xmlDoc.getElementsByTagName("title")[0].innerHTML;
+ ponerDatosInputHtml1(pregunta001);
+ textoSecreto1=xmlDoc.getElementsByTagName("answer")[0].childNodes[0].nodeValue;
+ 
+ //TEXT2
+ //Recuperamos el título y la respuesta correcta de Input, guardamos el texto secreto
+ var pregunta002=xmlDoc.getElementsByTagName("title")[1].innerHTML;
+ ponerDatosInputHtml2(pregunta002);
+ textoSecreto2=xmlDoc.getElementsByTagName("answer")[1].childNodes[0].nodeValue;
 
  //SELECT1
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
