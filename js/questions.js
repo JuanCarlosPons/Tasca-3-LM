@@ -14,19 +14,30 @@ window.onload = function(){
 function gestionarXml(dadesXml){
  var xmlDoc = dadesXml.responseXML; 
  
- //SELECT
- //Recuperamos el título y las opciones, guardamos la respuesta correcta
+
+ //Recuperamos el título y las opciones de cada question del XML y guardamos las respuestas correctas
+ //Pregunta 3 - SELECT 1
  var pregunta003=xmlDoc.getElementsByTagName("title")[2].innerHTML;
- var opcionesSelect = [];
+ var opcionesSelect1 = [];
  var nopt = xmlDoc.getElementById("profe003").getElementsByTagName('option').length;
   for (i = 0; i < nopt; i++) { 
-    opcionesSelect[i] = xmlDoc.getElementById("profe003").getElementsByTagName('option')[i].innerHTML;
+    opcionesSelect1[i] = xmlDoc.getElementById("profe003").getElementsByTagName('option')[i].innerHTML;
  }
- ponerDatosSelectHtml(pregunta003,opcionesSelect);
- respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
+ ponerDatosSelectHtml(pregunta003,opcionesSelect1);
+ respuestaSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
+ 
+ //Pregunta 4 - SELECT 2
+ var pregunta004=xmlDoc.getElementsByTagName("title")[3].innerHTML;
+ var opcionesSelect2 = [];
+ var nopt = xmlDoc.getElementById("profe004").getElementsByTagName('option').length;
+  for (i = 0; i < nopt; i++) { 
+    opcionesSelect2[i] = xmlDoc.getElementById("profe004").getElementsByTagName('option')[i].innerHTML;
+ }
+ ponerDatosSelectHtml1(pregunta004,opcionesSelect2);
+ respuestaSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 }
 
-function ponerDatosSelectHtml(t,opt){
+function ponerDatosSelectHtml1(t,opt){
   document.getElementById("pregunta003").innerHTML=t;
   var select = document.getElementsByTagName("select")[0];
   for (i = 0; i < opt.length; i++) { 
@@ -34,5 +45,16 @@ function ponerDatosSelectHtml(t,opt){
     option.text = opt[i];
     option.value=i+1;
     select.options.add(option);
- }  
+ }
+}
+
+function ponerDatosSelectHtml2(t,opt){
+  document.getElementById("pregunta004").innerHTML=t;
+  var select = document.getElementsByTagName("select")[0];
+  for (i = 0; i < opt.length; i++) { 
+    var option = document.createElement("option");
+    option.text = opt[i];
+    option.value=i+1;
+    select.options.add(option);
+ }
 }
