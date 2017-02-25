@@ -1,4 +1,4 @@
-
+var formElement=null;
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos, entre otras acciones.
 
@@ -72,7 +72,34 @@ function gestionarXml(dadesXml){
  }
  ponerDatosMultiSelectHtml2(pregunta006,opcionesMultiSelect2);
  respuestaMultiSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
+ 
+ //CHECKBOX1
+ var pregunta007 = xmlDoc.getElementsByTagName("title")[6].innerHTML;
+ var opcionesCheckbox1 = [];
+ var nopt = xmlDoc.getElementById("profe_007").getElementsByTagName('option').length;
+ for (i = 0; i < nopt; i++) { 
+    opcionesCheckbox1[i]=xmlDoc.getElementById("profe_007").getElementsByTagName('option')[i].innerHTML;
+ }  
+ ponerDatosCheckboxHtml1(pregunta007,opcionesCheckbox1);
+ var nres = xmlDoc.getElementById("profe_007").getElementsByTagName('answer').length;
+ for (i = 0; i < nres; i++) { 
+  respuestasCheckbox1[i]=xmlDoc.getElementById("profe_007").getElementsByTagName("answer")[i].innerHTML;
+ }
+ 
+ //CHECKBOX2
+ var pregunta008 = xmlDoc.getElementsByTagName("title")[7].innerHTML;
+ var opcionesCheckbox2 = [];
+ var nopt = xmlDoc.getElementById("profe_008").getElementsByTagName('option').length;
+ for (i = 0; i < nopt; i++) { 
+    opcionesCheckbox2[i]=xmlDoc.getElementById("profe_008").getElementsByTagName('option')[i].innerHTML;
+ }  
+ ponerDatosCheckboxHtml2(pregunta008,opcionesCheckbox2);
+ var nres = xmlDoc.getElementById("profe_008").getElementsByTagName('answer').length;
+ for (i = 0; i < nres; i++) { 
+  respuestasCheckbox2[i]=xmlDoc.getElementById("profe_008").getElementsByTagName("answer")[i].innerHTML;
+ }
 }
+
 
 //****************************************************************************************************
 // poner los datos recibios en el HTML
@@ -125,4 +152,49 @@ function ponerDatosMultiSelectHtml2(t,opt){
     option.value=i+1;
     multiSelect.options.add(option);
  }  
+}
+
+//Si necesitáis ayuda para hacer un corregirRadio() decirlo, lo ideal es que a podáis construirla modificando corregirCheckbox
+function corregirCheckbox1(){
+  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
+  var f=formElement;
+  var escorrecta = [];
+  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+   if (f.color[i].checked) {
+    escorrecta[i]=false;     
+    for (j = 0; j < respuestasCheckbox.length; j++) {
+     if (i==respuestasCheckbox[j]) escorrecta[i]=true;
+    }
+    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
+    if (escorrecta[i]) {
+     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("P3: "+i+" correcta");    
+    } else {
+     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("P3: "+i+" incorrecta");
+    }   
+   } 
+  }
+}
+
+function corregirCheckbox2(){
+  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
+  var f=formElement;
+  var escorrecta = [];
+  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+   if (f.color[i].checked) {
+    escorrecta[i]=false;     
+    for (j = 0; j < respuestasCheckbox.length; j++) {
+     if (i==respuestasCheckbox[j]) escorrecta[i]=true;
+    }
+    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
+    if (escorrecta[i]) {
+     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("P3: "+i+" correcta");    
+    } else {
+     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("P3: "+i+" incorrecta");
+    }   
+   } 
+  }
 }
