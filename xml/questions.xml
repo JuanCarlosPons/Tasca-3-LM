@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+<questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="questions.xsd">
 	<question id='profe001'>
 		<type>text</type>
 		<title>1 - Unidad de información más pequeña en un ordenador</title>
