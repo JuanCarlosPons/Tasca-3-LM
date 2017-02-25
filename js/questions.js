@@ -30,7 +30,7 @@ function gestionarXml(dadesXml){
   for (i = 0; i < nopt; i++) { 
     opcionesSelect1[i] = xmlDoc.getElementById("profe003").getElementsByTagName('option')[i].innerHTML;
  }
- ponerDatosSelectHtml(pregunta003,opcionesSelect1);
+ ponerDatosSelectHtml1(pregunta003,opcionesSelect1);
  respuestaSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
  
  //SELECT1
