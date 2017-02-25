@@ -1,4 +1,3 @@
-var formElement=null;
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos, entre otras acciones.
 
