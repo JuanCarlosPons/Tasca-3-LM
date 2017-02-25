@@ -16,14 +16,14 @@ function gestionarXml(dadesXml){
  
  //SELECT
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
- var pregunta003=xmlDoc.getElementsByTagName("title")[1].innerHTML;
+ var pregunta003=xmlDoc.getElementsByTagName("title")[2].innerHTML;
  var opcionesSelect = [];
  var nopt = xmlDoc.getElementById("profe003").getElementsByTagName('option').length;
   for (i = 0; i < nopt; i++) { 
     opcionesSelect[i] = xmlDoc.getElementById("profe003").getElementsByTagName('option')[i].innerHTML;
  }
  ponerDatosSelectHtml(pregunta003,opcionesSelect);
- respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].innerHTML);
+ respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 }
 
 function ponerDatosSelectHtml(t,opt){
