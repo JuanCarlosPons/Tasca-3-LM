@@ -87,3 +87,29 @@ function ponerDatosSelectHtml2(t,opt){
     select.options.add(option);
  }
 }
+
+function ponerDatosMultiSelectHtml1(t,opt){
+  document.getElementById("pregunta005").innerHTML=t;   
+  var multiSelect = document.getElementsByTagName("select")[2];
+  
+  //Bucle 
+  for (i = 0; i < opt.length; i++) { 
+    var option = document.createElement("option");
+    option.text = opt[i];
+    option.value=i+1;
+    multiSelect.options.add(option);
+ }  
+}
+
+function ponerDatosMultiSelectHtml1(t,opt){
+  document.getElementById("pregunta006").innerHTML=t;   
+  var multiSelect = document.getElementsByTagName("select")[3];
+  
+  //Bucle 
+  for (i = 0; i < opt.length; i++) { 
+    var option = document.createElement("option");
+    option.text = opt[i];
+    option.value=i+1;
+    multiSelect.options.add(option);
+ }  
+}
