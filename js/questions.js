@@ -75,9 +75,9 @@ function gestionarXml(dadesXml){
  //CHECKBOX1
  var pregunta007 = xmlDoc.getElementsByTagName("title")[6].innerHTML;
  var opcionesCheckbox1 = [];
- var nopt = xmlDoc.getElementById("profe_007").getElementsByTagName('option').length;
+ var nopt = xmlDoc.getElementById("profe007").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
-    opcionesCheckbox1[i]=xmlDoc.getElementById("profe_007").getElementsByTagName('option')[i].innerHTML;
+    opcionesCheckbox1[i]=xmlDoc.getElementById("profe007").getElementsByTagName('option')[i].innerHTML;
  }  
  ponerDatosCheckboxHtml1(pregunta007,opcionesCheckbox1);
  var nres = xmlDoc.getElementById("profe007").getElementsByTagName('answer').length;
@@ -93,9 +93,9 @@ function gestionarXml(dadesXml){
     opcionesCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName('option')[i].innerHTML;
  }  
  ponerDatosCheckboxHtml2(pregunta008,opcionesCheckbox2);
- var nres = xmlDoc.getElementById("profe_008").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("profe008").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasCheckbox2[i]=xmlDoc.getElementById("profe_008").getElementsByTagName("answer")[i].innerHTML;
+  respuestasCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName("answer")[i].innerHTML;
  }
 }
 
@@ -170,7 +170,7 @@ function ponerDatosCheckboxHtml1(t,opt){
  }  
 }
 
-function ponerDatosCheckboxHtm2(t,opt){
+function ponerDatosCheckboxHtml2(t,opt){
  var checkboxContainer=document.getElementById('checkboxDiv2');
  document.getElementById('pregunta008').innerHTML = t;
  for (i = 0; i < opt.length; i++) { 
