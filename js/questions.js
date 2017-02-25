@@ -45,7 +45,7 @@ function gestionarXml(dadesXml){
  ponerDatosSelectHtml1(pregunta003,opcionesSelect1);
  respuestaSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
  
- //SELECT1
+ //SELECT2
  //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var pregunta004=xmlDoc.getElementsByTagName("title")[3].innerHTML;
  var opcionesSelect2 = [];
@@ -56,6 +56,28 @@ function gestionarXml(dadesXml){
  ponerDatosSelectHtml2(pregunta004,opcionesSelect2);
  respuestaSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 }
+
+//MULTISELECT1
+ //Recuperamos el título y las opciones, guardamos la respuesta correcta
+ var pregunta005=xmlDoc.getElementsByTagName("title")[4].innerHTML;
+ var opcionesMultiSelect1 = [];
+ var nopt = xmlDoc.getElementById("profe005").getElementsByTagName('option').length;
+  for (i = 0; i < nopt; i++) { 
+    opcionesMultiSelect1[i] = xmlDoc.getElementById("profe005").getElementsByTagName('option')[i].innerHTML;
+ }
+ ponerDatosMultiSelectHtml1(pregunta005,opcionesMultiSelect1);
+ respuestaMultiSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
+
+//MULTISELECT2
+ //Recuperamos el título y las opciones, guardamos la respuesta correcta
+ var pregunta006=xmlDoc.getElementsByTagName("title")[5].innerHTML;
+ var opcionesMultiSelect2 = [];
+ var nopt = xmlDoc.getElementById("profe006").getElementsByTagName('option').length;
+  for (i = 0; i < nopt; i++) { 
+    opcionesMultiSelect2[i] = xmlDoc.getElementById("profe006").getElementsByTagName('option')[i].innerHTML;
+ }
+ ponerDatosMultiSelectHtml2(pregunta006,opcionesMultiSelect2);
+ respuestaMultiSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 
 //****************************************************************************************************
 // poner los datos recibios en el HTML
