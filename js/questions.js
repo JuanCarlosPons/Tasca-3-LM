@@ -59,6 +59,13 @@ function gestionarXml(dadesXml){
 
 //****************************************************************************************************
 // poner los datos recibios en el HTML
+function ponerDatosInputHtml1(t){
+ document.getElementById("pregunta001").innerHTML = t;
+}
+function ponerDatosInputHtml2(t){
+ document.getElementById("pregunta002").innerHTML = t;
+}
+
 function ponerDatosSelectHtml1(t,opt){
   document.getElementById("pregunta003").innerHTML=t;
   var select = document.getElementsByTagName("select")[0];
