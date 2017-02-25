@@ -29,13 +29,11 @@ function gestionarXml(dadesXml){
  textoSecreto1=xmlDoc.getElementsByTagName("answer")[0].childNodes[0].nodeValue;
  
  //TEXT2
- //Recuperamos el título y la respuesta correcta de Input, guardamos el texto secreto
  var pregunta002=xmlDoc.getElementsByTagName("title")[1].innerHTML;
  ponerDatosInputHtml2(pregunta002);
  textoSecreto2=xmlDoc.getElementsByTagName("answer")[1].childNodes[0].nodeValue;
 
  //SELECT1
- //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var pregunta003=xmlDoc.getElementsByTagName("title")[2].innerHTML;
  var opcionesSelect1 = [];
  var nopt = xmlDoc.getElementById("profe003").getElementsByTagName('option').length;
@@ -46,7 +44,6 @@ function gestionarXml(dadesXml){
  respuestaSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
  
  //SELECT2
- //Recuperamos el título y las opciones, guardamos la respuesta correcta
  var pregunta004=xmlDoc.getElementsByTagName("title")[3].innerHTML;
  var opcionesSelect2 = [];
  var nopt = xmlDoc.getElementById("profe004").getElementsByTagName('option').length;
@@ -57,8 +54,7 @@ function gestionarXml(dadesXml){
  respuestaSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 }
 
-//MULTISELECT1
- //Recuperamos el título y las opciones, guardamos la respuesta correcta
+ //MULTISELECT1
  var pregunta005=xmlDoc.getElementsByTagName("title")[4].innerHTML;
  var opcionesMultiSelect1 = [];
  var nopt = xmlDoc.getElementById("profe005").getElementsByTagName('option').length;
@@ -68,8 +64,7 @@ function gestionarXml(dadesXml){
  ponerDatosMultiSelectHtml1(pregunta005,opcionesMultiSelect1);
  respuestaMultiSelect1=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
 
-//MULTISELECT2
- //Recuperamos el título y las opciones, guardamos la respuesta correcta
+ //MULTISELECT2
  var pregunta006=xmlDoc.getElementsByTagName("title")[5].innerHTML;
  var opcionesMultiSelect2 = [];
  var nopt = xmlDoc.getElementById("profe006").getElementsByTagName('option').length;
@@ -113,7 +108,6 @@ function ponerDatosSelectHtml2(t,opt){
 function ponerDatosMultiSelectHtml1(t,opt){
   document.getElementById("pregunta005").innerHTML=t;   
   var multiSelect = document.getElementsByTagName("select")[2];
-  //Bucle 
   for (i = 0; i < opt.length; i++) { 
     var option = document.createElement("option");
     option.text = opt[i];
@@ -125,7 +119,6 @@ function ponerDatosMultiSelectHtml1(t,opt){
 function ponerDatosMultiSelectHtml2(t,opt){
   document.getElementById("pregunta006").innerHTML=t;   
   var multiSelect = document.getElementsByTagName("select")[3];
-  //Bucle 
   for (i = 0; i < opt.length; i++) { 
     var option = document.createElement("option");
     option.text = opt[i];
