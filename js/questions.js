@@ -52,7 +52,6 @@ function gestionarXml(dadesXml){
  }
  ponerDatosSelectHtml2(pregunta004,opcionesSelect2);
  respuestaSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
-}
 
  //MULTISELECT1
  var pregunta005=xmlDoc.getElementsByTagName("title")[4].innerHTML;
@@ -73,6 +72,7 @@ function gestionarXml(dadesXml){
  }
  ponerDatosMultiSelectHtml2(pregunta006,opcionesMultiSelect2);
  respuestaMultiSelect2=parseInt(xmlDoc.getElementsByTagName("answer")[2].innerHTML);
+}
 
 //****************************************************************************************************
 // poner los datos recibios en el HTML
