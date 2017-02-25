@@ -91,7 +91,6 @@ function ponerDatosSelectHtml2(t,opt){
 function ponerDatosMultiSelectHtml1(t,opt){
   document.getElementById("pregunta005").innerHTML=t;   
   var multiSelect = document.getElementsByTagName("select")[2];
-  
   //Bucle 
   for (i = 0; i < opt.length; i++) { 
     var option = document.createElement("option");
@@ -101,10 +100,9 @@ function ponerDatosMultiSelectHtml1(t,opt){
  }  
 }
 
-function ponerDatosMultiSelectHtml1(t,opt){
+function ponerDatosMultiSelectHtml2(t,opt){
   document.getElementById("pregunta006").innerHTML=t;   
   var multiSelect = document.getElementsByTagName("select")[3];
-  
   //Bucle 
   for (i = 0; i < opt.length; i++) { 
     var option = document.createElement("option");
