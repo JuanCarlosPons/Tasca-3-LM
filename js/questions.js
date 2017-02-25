@@ -1,5 +1,3 @@
-var respuestasCheckbox1 = []
-var respuestasCheckbox2 = []
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos, entre otras acciones.
 
@@ -76,6 +74,7 @@ function gestionarXml(dadesXml){
  //CHECKBOX1
  var pregunta007 = xmlDoc.getElementsByTagName("title")[6].innerHTML;
  var opcionesCheckbox1 = [];
+ var respuestasCheckbox1 = []
  var nopt = xmlDoc.getElementById("profe007").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesCheckbox1[i]=xmlDoc.getElementById("profe007").getElementsByTagName('option')[i].innerHTML;
@@ -89,6 +88,7 @@ function gestionarXml(dadesXml){
  //CHECKBOX2
  var pregunta008 = xmlDoc.getElementsByTagName("title")[7].innerHTML;
  var opcionesCheckbox2 = [];
+ var respuestasCheckbox2 = []
  var nopt = xmlDoc.getElementById("profe008").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName('option')[i].innerHTML;
