@@ -214,6 +214,7 @@ function ponerDatosCheckboxHtml2(t,opt){
     checkboxContainer.appendChild(label);
     checkboxContainer.appendChild(document.createElement("br"));
  }
+}
  
 function ponerDatosRadioHtml1(t,opt){
  var radioContainer=document.getElementById('radioDiv1');
@@ -230,6 +231,7 @@ function ponerDatosRadioHtml1(t,opt){
     radioContainer.appendChild(label);
     radioContainer.appendChild(document.createElement("br"));
  }
+}
  
  function ponerDatosRadioHtml2(t,opt){
  var radioContainer=document.getElementById('radioDiv2');
