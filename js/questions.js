@@ -180,7 +180,7 @@ function corregirSelect1(){
   //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
   //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
   //luego comparar ese value con el value guardado en answer
-  var sel = formElement.elements[1];  
+  var sel = formElement.elements[2];  
   if (sel.selectedIndex-1==respuestaSelect1) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
    darRespuestaHtml("Pregunta 3: Correcta");
    nota +=1;
@@ -192,7 +192,7 @@ function corregirSelect2(){
   //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
   //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
   //luego comparar ese value con el value guardado en answer
-  var sel = formElement.elements[1];  
+  var sel = formElement.elements[3];  
   if (sel.selectedIndex-1==respuestaSelect2) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
    darRespuestaHtml("Pregunta 4: Correcta");
    nota +=1;
