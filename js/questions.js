@@ -56,7 +56,7 @@ function gestionarXml(dadesXml){
  //Recuperamos el título y la respuesta correcta de Input, guardamos el texto secreto
  var pregunta001=xmlDoc.getElementsByTagName("title")[0].innerHTML;
  ponerDatosInputHtml1(pregunta001);
- textoSecreto1=xmlDoc.getElementsByTagName("answer")[0].innerHTML);
+ textoSecreto1=xmlDoc.getElementsByTagName("answer")[0].childNodes[0].nodeValue;
  
  //TEXT2
  var pregunta002=xmlDoc.getElementsByTagName("title")[1].innerHTML;
