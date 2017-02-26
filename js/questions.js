@@ -297,6 +297,30 @@ function corregirTexto2(){
     else darRespuestaHtml("P1: Incorrecto");
 }
 
+function corregirSelect1(){
+  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
+  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
+  //luego comparar ese value con el value guardado en answer
+  var sel = formElement.elements[1];  
+  if (sel.selectedIndex-1==respuestaSelect1) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
+   darRespuestaHtml("P2: Correcto");
+   nota +=1;
+  }
+  else darRespuestaHtml("P2: Incorrecto");
+}
+
+function corregirSelect2(){
+  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
+  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
+  //luego comparar ese value con el value guardado en answer
+  var sel = formElement.elements[1];  
+  if (sel.selectedIndex-1==respuestaSelect2) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
+   darRespuestaHtml("P2: Correcto");
+   nota +=1;
+  }
+  else darRespuestaHtml("P2: Incorrecto");
+}
+
 //****************************************************************************************************
 //Gestionar la presentación de las respuestas
 function darRespuestaHtml(r){
@@ -313,4 +337,26 @@ function presentarNota(){
 function inicializar(){
    document.getElementById('resultadosDiv').innerHTML = "";
    nota=0.0;
+}
+
+//Comprobar que se han introducido datos en el formulario
+function comprobar(){
+   var f=formElement;
+   var checked=false;
+   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+      if (f.color[i].checked) checked=true;
+   }
+   if (f.elements[0].value=="") {
+    f.elements[0].focus();
+    alert("Escribe tu respuesta");
+    return false;
+   } else if (f.elements[2].selectedIndex==0) {
+    f.elements[2].focus();
+    alert("Selecciona una opción");
+    return false;
+   } if (!checked) {    
+    document.getElementsByTagName("h3")[6].focus();
+    alert("Selecciona una opción del checkbox");
+    return false;
+   } else  return true;
 }
