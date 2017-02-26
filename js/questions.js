@@ -349,8 +349,16 @@ function comprobar(){
     f.elements[0].focus();
     alert("Escribe tu respuesta");
     return false;
+   } else if (f.elements[1].value=="") {
+    f.elements[1].focus();
+    alert("Escribe tu respuesta");
+    return false;
    } else if (f.elements[2].selectedIndex==0) {
     f.elements[2].focus();
+    alert("Selecciona una opción");
+    return false;
+   } else if (f.elements[3].selectedIndex==0) {
+    f.elements[3].focus();
     alert("Selecciona una opción");
     return false;
    } if (!checked) {    
