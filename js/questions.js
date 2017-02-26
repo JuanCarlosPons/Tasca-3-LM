@@ -24,6 +24,8 @@ window.onload = function(){
 	 corregirTexto2();
 	 corregirSelect1();
 	 corregirSelect2();
+	 corregirMultiSelect1();
+	 corregirMultiSelect2();
 	 corregirCheckbox1();
 	 corregirCheckbox2();
 	 presentarNota();
@@ -226,14 +228,13 @@ function corregirMultiSelect2(){
     var escorrecta = false;	        
     for (var j = 0; j < respuestaMultiSelect2.length; j++) { //miramos si son correctas
      if (i==respuestaMultiSelect2[j]) escorrecta[i]=true;
-    }
+     }
     if (escorrecta) text+=f.respuestaMultiSelect2[i].text+" Correcta ";
      nota +=1.0/respuestaMultiSelect2.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml(text);
-    else text+=f.respuestaMultiSelect2[i].text+" Incorrecta ";
+    } else text+=f.respuestaMultiSelect2[i].text+" Incorrecta ";
      nota -=1.0/respuestaMultiSelect2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml(text);
-    }   
+     darRespuestaHtml(text);   
   }     
 }
 
