@@ -103,28 +103,28 @@ function gestionarXml(dadesXml){
  var pregunta009 = xmlDoc.getElementsByTagName("title")[8].innerHTML;
  var opcionesRadio1 = [];
  var respuestasRadio1 = [];
- var nopt = xmlDoc.getElementById("profe_009").getElementsByTagName('option').length;
+ var nopt = xmlDoc.getElementById("profe009").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
-    opcionesRadio1[i]=xmlDoc.getElementById("profe_009").getElementsByTagName('option')[i].innerHTML;
+    opcionesRadio1[i]=xmlDoc.getElementById("profe009").getElementsByTagName('option')[i].innerHTML;
  }  
  ponerDatosRadioHtml1(pregunta009,opcionesRadio1);
- var nres = xmlDoc.getElementById("profe_009").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("profe009").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasRadio1[i]=xmlDoc.getElementById("profe_009").getElementsByTagName("answer")[i].innerHTML;
+  respuestasRadio1[i]=xmlDoc.getElementById("profe009").getElementsByTagName("answer")[i].innerHTML;
  } 
 
   //RADIO2
  var pregunta010 = xmlDoc.getElementsByTagName("title")[9].innerHTML;
  var opcionesRadio2 = [];
  var respuestasRadio2 = [];
- var nopt = xmlDoc.getElementById("profe_010").getElementsByTagName('option').length;
+ var nopt = xmlDoc.getElementById("profe010").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
-    opcionesRadio2[i]=xmlDoc.getElementById("profe_010").getElementsByTagName('option')[i].innerHTML;
+    opcionesRadio2[i]=xmlDoc.getElementById("profe010").getElementsByTagName('option')[i].innerHTML;
  }  
  ponerDatosRadioHtml2(pregunta010,opcionesRadio2);
- var nres = xmlDoc.getElementById("profe_010").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("profe010").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
-  respuestasRadio2[i]=xmlDoc.getElementById("profe_010").getElementsByTagName("answer")[i].innerHTML;
+  respuestasRadio2[i]=xmlDoc.getElementById("profe010").getElementsByTagName("answer")[i].innerHTML;
  }
 }
 
