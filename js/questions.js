@@ -19,15 +19,17 @@ window.onload = function(){
 //CORREGIR al apretar el botón
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
-   inicializar();
-	corregirTexto1();
-	corregirTexto2();
-    	corregirSelect1();
-	corregirSelect2();
-    	presentarNota();
-   return false;
+	 inicializar();
+	 corregirTexto1();
+	 corregirTexto2();
+	 corregirSelect1();
+	 corregirSelect2();
+	 corregirCheckbox1();
+	 corregirCheckbox2();
+	 presentarNota();
+	 return false;
   }
- 
+	 
  //LEER XML de xml/questions.xml
   var xhttp = new XMLHttpRequest();
  xhttp.onreadystatechange = function() {
@@ -190,6 +192,51 @@ function corregirSelect2(){
    nota +=1;
   }
   else darRespuestaHtml("Pregunta 4: Incorrecta");
+}
+
+//Si necesitáis ayuda para hacer un corregirRadio() decirlo, lo ideal es que a podáis construirla modificando corregirCheckbox
+function corregirCheckbox1(){
+  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
+  var f=formElement;
+  var escorrecta = [];
+  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+   if (f.color[i].checked) {
+    escorrecta[i]=false;     
+    for (j = 0; j < respuestasCheckbox1.length; j++) {
+     if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
+    }
+    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
+    if (escorrecta[i]) {
+     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("Pregunta 7: "+i+" correcta");    
+    } else {
+     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("Pregunta 7: "+i+" incorrecta");
+    }   
+   } 
+  }
+}
+
+function corregirCheckbox2(){
+  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
+  var f=formElement;
+  var escorrecta = [];
+  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+   if (f.color[i].checked) {
+    escorrecta[i]=false;     
+    for (j = 0; j < respuestasCheckbox2.length; j++) {
+     if (i==respuestasCheckbox2[j]) escorrecta[i]=true;
+    }
+    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
+    if (escorrecta[i]) {
+     nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("Pregunta 8: "+i+" correcta");    
+    } else {
+     nota -=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("Pregunta 8:"+i+" incorrecta");
+    }   
+   } 
+  }
 }
 
 //****************************************************************************************************
