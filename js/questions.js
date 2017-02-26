@@ -24,7 +24,6 @@ window.onload = function(){
 	 corregirTexto2();
 	 corregirSelect1();
 	 corregirSelect2();
-	 corregirMultiSelect1();
 	 corregirMultiSelect2();
 	 corregirCheckbox1();
 	 corregirCheckbox2();
