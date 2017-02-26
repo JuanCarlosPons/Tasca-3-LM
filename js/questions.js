@@ -16,18 +16,25 @@ var nota = 0;  //nota de la prueba sobre 10 puntos (hay 10 preguntas)
 
 window.onload = function(){ 
  
- //CORREGIR al apretar el botón
+//CORREGIR al apretar el botón
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
    inicializar();
    if (comprobar()){
-    corregirNumber();
-    corregirSelect();
-    corregirCheckbox();
+    corregirTexto1();
+	   corregirTexto2();
+    corregirSelect1();
+	   corregirSelect2();
+	   corregirMultiSelect1();
+	   corregirMultiSelect2();
+    corregirCheckbox1();
+	   corregirCheckbox2();
+	   corregirRadio1();
+	   corregirRadio2();
     presentarNota();
    }
    return false;
- }
+  }
  
  //LEER XML de xml/questions.xml
   var xhttp = new XMLHttpRequest();
@@ -272,53 +279,22 @@ function ponerDatosRadioHtml1(t,opt){
 
 //****************************************************************************************************
 //implementación de la corrección
-function corregirNumber(){
-  //Vosotros debéis comparar el texto escrito con el texto que hay en el xml
-  //en este ejemplo hace una comparación de números enteros
+function corregirTexto1(){
   var s=formElement.elements[0].value;     
-  if (s==numeroSecreto) {
-   darRespuestaHtml("P1: Exacto!");
+  if (s==textoSecreto1) {
+   darRespuestaHtml("P1: Correcto");
    nota +=1;
   }
-  else {
-    if (s>numeroSecreto) darRespuestaHtml("P1: Te has pasado");
-    else darRespuestaHtml("P1: Te has quedado corto");
-  }
+    else darRespuestaHtml("P1: Incorrecto");
 }
 
-function corregirSelect(){
-  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
-  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
-  //luego comparar ese value con el value guardado en answer
-  var sel = formElement.elements[1];  
-  if (sel.selectedIndex-1==respuestaSelect) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
-   darRespuestaHtml("P2: Correcto");
+function corregirTexto2(){
+  var s=formElement.elements[1].value;     
+  if (s==textoSecreto2) {
+   darRespuestaHtml("P1: Correcto");
    nota +=1;
   }
-  else darRespuestaHtml("P2: Incorrecto");
-}
-
-//Si necesitáis ayuda para hacer un corregirRadio() decirlo, lo ideal es que a podáis construirla modificando corregirCheckbox
-function corregirCheckbox(){
-  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
-  var f=formElement;
-  var escorrecta = [];
-  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-   if (f.color[i].checked) {
-    escorrecta[i]=false;     
-    for (j = 0; j < respuestasCheckbox.length; j++) {
-     if (i==respuestasCheckbox[j]) escorrecta[i]=true;
-    }
-    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    if (escorrecta[i]) {
-     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("P3: "+i+" correcta");    
-    } else {
-     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("P3: "+i+" incorrecta");
-    }   
-   } 
-  }
+    else darRespuestaHtml("P1: Incorrecto");
 }
 
 //****************************************************************************************************
