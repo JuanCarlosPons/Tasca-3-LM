@@ -161,19 +161,19 @@ function gestionarXml(dadesXml){
 function corregirTexto1(){
   var s=formElement.elements[0].value;     
   if (s==textoSecreto1) {
-   darRespuestaHtml("P1: Correcto");
+   darRespuestaHtml("Pregunta 1: Correcta");
    nota +=1;
   }
-    else darRespuestaHtml("P1: Incorrecto");
+    else darRespuestaHtml("Pregunta 1: Incorrecta");
 }
 
 function corregirTexto2(){
   var s=formElement.elements[1].value;     
   if (s==textoSecreto2) {
-   darRespuestaHtml("P1: Correcto");
+   darRespuestaHtml("Pregunta 2: Correcta");
    nota +=1;
   }
-    else darRespuestaHtml("P1: Incorrecto");
+    else darRespuestaHtml("Pregunta2: Incorrecta");
 }
 
 function corregirSelect1(){
@@ -182,10 +182,10 @@ function corregirSelect1(){
   //luego comparar ese value con el value guardado en answer
   var sel = formElement.elements[1];  
   if (sel.selectedIndex-1==respuestaSelect1) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
-   darRespuestaHtml("P2: Correcto");
+   darRespuestaHtml("Pregunta 3: Correcta");
    nota +=1;
   }
-  else darRespuestaHtml("P2: Incorrecto");
+  else darRespuestaHtml("Pregunta 3: Incorrecta");
 }
 
 function corregirSelect2(){
@@ -194,10 +194,10 @@ function corregirSelect2(){
   //luego comparar ese value con el value guardado en answer
   var sel = formElement.elements[1];  
   if (sel.selectedIndex-1==respuestaSelect2) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
-   darRespuestaHtml("P2: Correcto");
+   darRespuestaHtml("Pregunta 4: Correcta");
    nota +=1;
   }
-  else darRespuestaHtml("P2: Incorrecto");
+  else darRespuestaHtml("Pregunta 4: Incorrecta");
 }
 
 //****************************************************************************************************
@@ -348,23 +348,23 @@ function comprobar(){
    }
    if (f.elements[0].value=="") {
     f.elements[0].focus();
-    alert("Escribe tu respuesta");
+    alert("Responde todas las preguntas antes de corregir");
     return false;
    } else if (f.elements[1].value=="") {
     f.elements[1].focus();
-    alert("Escribe tu respuesta");
+    alert("Responde todas las preguntas antes de corregir");
     return false;
    } else if (f.elements[2].selectedIndex==0) {
     f.elements[2].focus();
-    alert("Selecciona una opción");
+    alert("Responde todas las preguntas antes de corregir");
     return false;
    } else if (f.elements[3].selectedIndex==0) {
     f.elements[3].focus();
-    alert("Selecciona una opción");
+    alert("Responde todas las preguntas antes de corregir");
     return false;
    } if (!checked) {    
     document.getElementsByTagName("h3")[6].focus();
-    alert("Selecciona una opción del checkbox");
+    alert("Responde todas las preguntas antes de corregir");
     return false;
    } else  return true;
 }
