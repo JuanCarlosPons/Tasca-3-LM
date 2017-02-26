@@ -88,7 +88,7 @@ function gestionarXml(dadesXml){
  //CHECKBOX2
  var pregunta008 = xmlDoc.getElementsByTagName("title")[7].innerHTML;
  var opcionesCheckbox2 = [];
- var respuestasCheckbox2 = []
+ var respuestasCheckbox2 = [];
  var nopt = xmlDoc.getElementById("profe008").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName('option')[i].innerHTML;
@@ -98,7 +98,34 @@ function gestionarXml(dadesXml){
  for (i = 0; i < nres; i++) { 
   respuestasCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName("answer")[i].innerHTML;
  }
+ 
+ //RADIO1
+ var pregunta009 = xmlDoc.getElementsByTagName("title")[8].innerHTML;
+ var opcionesRadio1 = [];
+ var respuestasRadio1 = [];
+ var nopt = xmlDoc.getElementById("profe_009").getElementsByTagName('option').length;
+ for (i = 0; i < nopt; i++) { 
+    opcionesRadio1[i]=xmlDoc.getElementById("profe_009").getElementsByTagName('option')[i].innerHTML;
+ }  
+ ponerDatosRadioHtml1(pregunta009,opcionesRadio1);
+ var nres = xmlDoc.getElementById("profe_009").getElementsByTagName('answer').length;
+ for (i = 0; i < nres; i++) { 
+  respuestasRadio1[i]=xmlDoc.getElementById("profe_009").getElementsByTagName("answer")[i].innerHTML;
+ } 
 
+  //RADIO2
+ var pregunta010 = xmlDoc.getElementsByTagName("title")[9].innerHTML;
+ var opcionesRadio2 = [];
+ var respuestasRadio2 = [];
+ var nopt = xmlDoc.getElementById("profe_010").getElementsByTagName('option').length;
+ for (i = 0; i < nopt; i++) { 
+    opcionesRadio2[i]=xmlDoc.getElementById("profe_010").getElementsByTagName('option')[i].innerHTML;
+ }  
+ ponerDatosRadioHtml2(pregunta010,opcionesRadio2);
+ var nres = xmlDoc.getElementById("profe_010").getElementsByTagName('answer').length;
+ for (i = 0; i < nres; i++) { 
+  respuestasRadio2[i]=xmlDoc.getElementById("profe_010").getElementsByTagName("answer")[i].innerHTML;
+ }
 }
 
 
@@ -186,5 +213,37 @@ function ponerDatosCheckboxHtml2(t,opt){
     checkboxContainer.appendChild(input);
     checkboxContainer.appendChild(label);
     checkboxContainer.appendChild(document.createElement("br"));
- }  
+ }
+ 
+function ponerDatosRadioHtml1(t,opt){
+ var radioContainer=document.getElementById('radioDiv1');
+ document.getElementById('pregunta009').innerHTML = t;
+ for (i = 0; i < opt.length; i++) { 
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+    label.innerHTML=opt[i];
+    label.setAttribute("for", "color_"+i);
+    input.type="radio";
+    input.name="color";
+    input.id="color_"+i;;    
+    radioContainer.appendChild(input);
+    radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
+ }
+ 
+ function ponerDatosRadioHtml2(t,opt){
+ var radioContainer=document.getElementById('radioDiv2');
+ document.getElementById('pregunta010').innerHTML = t;
+ for (i = 0; i < opt.length; i++) { 
+    var input = document.createElement("input");
+    var label = document.createElement("label");
+    label.innerHTML=opt[i];
+    label.setAttribute("for", "color_"+i);
+    input.type="radio";
+    input.name="color";
+    input.id="color_"+i;;    
+    radioContainer.appendChild(input);
+    radioContainer.appendChild(label);
+    radioContainer.appendChild(document.createElement("br"));
+ }
 }
