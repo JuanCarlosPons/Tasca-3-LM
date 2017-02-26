@@ -157,6 +157,50 @@ function gestionarXml(dadesXml){
 }
 
 //****************************************************************************************************
+//implementación de la corrección
+function corregirTexto1(){
+  var s=formElement.elements[0].value;     
+  if (s==textoSecreto1) {
+   darRespuestaHtml("P1: Correcto");
+   nota +=1;
+  }
+    else darRespuestaHtml("P1: Incorrecto");
+}
+
+function corregirTexto2(){
+  var s=formElement.elements[1].value;     
+  if (s==textoSecreto2) {
+   darRespuestaHtml("P1: Correcto");
+   nota +=1;
+  }
+    else darRespuestaHtml("P1: Incorrecto");
+}
+
+function corregirSelect1(){
+  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
+  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
+  //luego comparar ese value con el value guardado en answer
+  var sel = formElement.elements[1];  
+  if (sel.selectedIndex-1==respuestaSelect1) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
+   darRespuestaHtml("P2: Correcto");
+   nota +=1;
+  }
+  else darRespuestaHtml("P2: Incorrecto");
+}
+
+function corregirSelect2(){
+  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
+  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
+  //luego comparar ese value con el value guardado en answer
+  var sel = formElement.elements[1];  
+  if (sel.selectedIndex-1==respuestaSelect2) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
+   darRespuestaHtml("P2: Correcto");
+   nota +=1;
+  }
+  else darRespuestaHtml("P2: Incorrecto");
+}
+
+//****************************************************************************************************
 // poner los datos recibios en el HTML
 function ponerDatosInputHtml1(t){
  document.getElementById("pregunta001").innerHTML = t;
@@ -275,50 +319,6 @@ function ponerDatosRadioHtml1(t,opt){
     radioContainer.appendChild(label);
     radioContainer.appendChild(document.createElement("br"));
  }
-}
-
-//****************************************************************************************************
-//implementación de la corrección
-function corregirTexto1(){
-  var s=formElement.elements[0].value;     
-  if (s==textoSecreto1) {
-   darRespuestaHtml("P1: Correcto");
-   nota +=1;
-  }
-    else darRespuestaHtml("P1: Incorrecto");
-}
-
-function corregirTexto2(){
-  var s=formElement.elements[1].value;     
-  if (s==textoSecreto2) {
-   darRespuestaHtml("P1: Correcto");
-   nota +=1;
-  }
-    else darRespuestaHtml("P1: Incorrecto");
-}
-
-function corregirSelect1(){
-  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
-  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
-  //luego comparar ese value con el value guardado en answer
-  var sel = formElement.elements[1];  
-  if (sel.selectedIndex-1==respuestaSelect1) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
-   darRespuestaHtml("P2: Correcto");
-   nota +=1;
-  }
-  else darRespuestaHtml("P2: Incorrecto");
-}
-
-function corregirSelect2(){
-  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
-  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
-  //luego comparar ese value con el value guardado en answer
-  var sel = formElement.elements[1];  
-  if (sel.selectedIndex-1==respuestaSelect2) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
-   darRespuestaHtml("P2: Correcto");
-   nota +=1;
-  }
-  else darRespuestaHtml("P2: Incorrecto");
 }
 
 //****************************************************************************************************
