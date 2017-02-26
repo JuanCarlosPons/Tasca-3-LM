@@ -271,6 +271,57 @@ function ponerDatosRadioHtml1(t,opt){
 }
 
 //****************************************************************************************************
+//implementación de la corrección
+function corregirNumber(){
+  //Vosotros debéis comparar el texto escrito con el texto que hay en el xml
+  //en este ejemplo hace una comparación de números enteros
+  var s=formElement.elements[0].value;     
+  if (s==numeroSecreto) {
+   darRespuestaHtml("P1: Exacto!");
+   nota +=1;
+  }
+  else {
+    if (s>numeroSecreto) darRespuestaHtml("P1: Te has pasado");
+    else darRespuestaHtml("P1: Te has quedado corto");
+  }
+}
+
+function corregirSelect(){
+  //Compara el índice seleccionado con el valor del íncide que hay en el xml (<answer>2</answer>)
+  //para implementarlo con type radio, usar value para enumerar las opciones <input type='radio' value='1'>...
+  //luego comparar ese value con el value guardado en answer
+  var sel = formElement.elements[1];  
+  if (sel.selectedIndex-1==respuestaSelect) { //-1 porque hemos puesto una opción por defecto en el select que ocupa la posición 0
+   darRespuestaHtml("P2: Correcto");
+   nota +=1;
+  }
+  else darRespuestaHtml("P2: Incorrecto");
+}
+
+//Si necesitáis ayuda para hacer un corregirRadio() decirlo, lo ideal es que a podáis construirla modificando corregirCheckbox
+function corregirCheckbox(){
+  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
+  var f=formElement;
+  var escorrecta = [];
+  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+   if (f.color[i].checked) {
+    escorrecta[i]=false;     
+    for (j = 0; j < respuestasCheckbox.length; j++) {
+     if (i==respuestasCheckbox[j]) escorrecta[i]=true;
+    }
+    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
+    if (escorrecta[i]) {
+     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("P3: "+i+" correcta");    
+    } else {
+     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("P3: "+i+" incorrecta");
+    }   
+   } 
+  }
+}
+
+//****************************************************************************************************
 //Gestionar la presentación de las respuestas
 function darRespuestaHtml(r){
  var p = document.createElement("p");
