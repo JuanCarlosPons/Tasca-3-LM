@@ -20,7 +20,6 @@ window.onload = function(){
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
    inicializar();
-   if (comprobar()){
 	corregirTexto1();
 	corregirTexto2();
     	corregirSelect1();
@@ -32,7 +31,6 @@ window.onload = function(){
 	corregirRadio1();
 	corregirRadio2();
     	presentarNota();
-   }
    return false;
   }
  
@@ -340,7 +338,7 @@ function inicializar(){
 }
 
 //Comprobar que se han introducido datos en el formulario
-function comprobar(){
+//function comprobar(){
    var f=formElement;
    var checked=false;
    for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
