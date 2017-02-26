@@ -94,7 +94,7 @@ function gestionarXml(dadesXml){
     opcionesCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName('option')[i].innerHTML;
  }  
  ponerDatosCheckboxHtml2(pregunta008,opcionesCheckbox2);
- var nres = xmlDoc.getElementById("profe007").getElementsByTagName('answer').length;
+ var nres = xmlDoc.getElementById("profe008").getElementsByTagName('answer').length;
  for (i = 0; i < nres; i++) { 
   respuestasCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName("answer")[i].innerHTML;
  }
@@ -127,7 +127,6 @@ function gestionarXml(dadesXml){
   respuestasRadio2[i]=xmlDoc.getElementById("profe_010").getElementsByTagName("answer")[i].innerHTML;
  }
 }
-
 
 //****************************************************************************************************
 // poner los datos recibios en el HTML
