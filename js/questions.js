@@ -269,3 +269,21 @@ function ponerDatosRadioHtml1(t,opt){
     radioContainer.appendChild(document.createElement("br"));
  }
 }
+
+//****************************************************************************************************
+//Gestionar la presentación de las respuestas
+function darRespuestaHtml(r){
+ var p = document.createElement("p");
+ var node = document.createTextNode(r);
+ p.appendChild(node);
+ document.getElementById('resultadosDiv').appendChild(p);
+}
+
+function presentarNota(){
+   darRespuestaHtml("Nota: "+nota+" puntos sobre 10");
+}
+
+function inicializar(){
+   document.getElementById('resultadosDiv').innerHTML = "";
+   nota=0.0;
+}
