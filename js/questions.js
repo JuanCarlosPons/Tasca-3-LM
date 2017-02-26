@@ -1,11 +1,36 @@
+var formElement=null;
+var textoSecreto1=null;
+var textoSecreto2=null;
+var respuestaSelect1=null;
+var respuestaSelect2=null;
+var respuestaMultiSelect1=null
+var respuestaMultiSelect2=null
+var respuestasCheckbox1 = []
+var respuestasCheckbox2 = []
+var respuestasRadio1 = []
+var respuestasRadio2 = []
+var nota = 0;  //nota de la prueba sobre 10 puntos (hay 10 preguntas)
+
 //**************************************************************************************************** 
 //Después de cargar la página (onload) se definen los eventos sobre los elementos, entre otras acciones.
 
 window.onload = function(){ 
  
- //LEER XML de xml/questions.xml
+ //CORREGIR al apretar el botón
+ formElement=document.getElementById('myform');
+ formElement.onsubmit=function(){
+   inicializar();
+   if (comprobar()){
+    corregirNumber();
+    corregirSelect();
+    corregirCheckbox();
+    presentarNota();
+   }
+   return false;
+ }
  
- var xhttp = new XMLHttpRequest();
+ //LEER XML de xml/questions.xml
+  var xhttp = new XMLHttpRequest();
  xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
    gestionarXml(this);
@@ -74,7 +99,6 @@ function gestionarXml(dadesXml){
  //CHECKBOX1
  var pregunta007 = xmlDoc.getElementsByTagName("title")[6].innerHTML;
  var opcionesCheckbox1 = [];
- var respuestasCheckbox1 = []
  var nopt = xmlDoc.getElementById("profe007").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesCheckbox1[i]=xmlDoc.getElementById("profe007").getElementsByTagName('option')[i].innerHTML;
@@ -88,7 +112,6 @@ function gestionarXml(dadesXml){
  //CHECKBOX2
  var pregunta008 = xmlDoc.getElementsByTagName("title")[7].innerHTML;
  var opcionesCheckbox2 = [];
- var respuestasCheckbox2 = [];
  var nopt = xmlDoc.getElementById("profe008").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesCheckbox2[i]=xmlDoc.getElementById("profe008").getElementsByTagName('option')[i].innerHTML;
@@ -102,7 +125,6 @@ function gestionarXml(dadesXml){
  //RADIO1
  var pregunta009 = xmlDoc.getElementsByTagName("title")[8].innerHTML;
  var opcionesRadio1 = [];
- var respuestasRadio1 = [];
  var nopt = xmlDoc.getElementById("profe009").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesRadio1[i]=xmlDoc.getElementById("profe009").getElementsByTagName('option')[i].innerHTML;
@@ -116,7 +138,6 @@ function gestionarXml(dadesXml){
   //RADIO2
  var pregunta010 = xmlDoc.getElementsByTagName("title")[9].innerHTML;
  var opcionesRadio2 = [];
- var respuestasRadio2 = [];
  var nopt = xmlDoc.getElementById("profe010").getElementsByTagName('option').length;
  for (i = 0; i < nopt; i++) { 
     opcionesRadio2[i]=xmlDoc.getElementById("profe010").getElementsByTagName('option')[i].innerHTML;
