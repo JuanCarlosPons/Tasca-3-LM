@@ -202,7 +202,7 @@ function corregirCheckbox1(){
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
   var escorrecta = [];
-  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+  for (i = 0; i < f.color1.length; i++) {  //"color" es el nombre asignado a todos los checkbox
    if (f.color1[i].checked) {
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox1.length; j++) {
@@ -224,8 +224,8 @@ function corregirCheckbox2(){
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
   var escorrecta = [];
-  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-   if (f.color[i].checked) {
+  for (i = 0; i < f.color2.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+   if (f.color2[i].checked) {
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox2.length; j++) {
      if (i==respuestasCheckbox2[j]) escorrecta[i]=true;
@@ -319,10 +319,10 @@ function ponerDatosCheckboxHtml2(t,opt){
     var input = document.createElement("input");
     var label = document.createElement("label");
     label.innerHTML=opt[i];
-    label.setAttribute("for", "color_"+i);
+    label.setAttribute("for", "color2_"+i);
     input.type="checkbox";
-    input.name="color";
-    input.id="color_"+i;;    
+    input.name="color2";
+    input.id="color2_"+i;;    
     checkboxContainer.appendChild(input);
     checkboxContainer.appendChild(label);
     checkboxContainer.appendChild(document.createElement("br"));
@@ -386,8 +386,11 @@ function inicializar(){
 function comprobar(){
    var f=formElement;
    var checked=false;
-   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-      if (f.color[i].checked) checked=true;
+   for (i = 0; i < f.color1.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+      if (f.color1[i].checked) checked=true;
+   }
+   for (i = 0; i < f.color2.length; i++) {  //"color" es el nombre asignado a todos los checkbox
+      if (f.color2[i].checked) checked=true;
    }
    if (f.elements[0].value=="") {
     f.elements[0].focus();
