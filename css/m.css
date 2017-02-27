@@ -2,9 +2,14 @@ body,html {
 	margin:0px
 	}
 body {
+	font-family: Arial, Verdana;
 	width:96%;
 	padding-left:2%;
 	padding-right:2%
+	}
+form {
+	padding: 2%;
+	background-color: #B4F4FC;
 	}
 	
 /* body,input,select,label{font-size:5vw} */
