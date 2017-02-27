@@ -210,10 +210,9 @@ function corregirCheckbox1(){
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
     if (escorrecta[i]) {
-     nota +=1.0/respuestasCheckbox1.length;  //dividido por el número de respuestas correctas   
+     nota +=1  
      darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
     } else {
-     nota -=1.0/respuestasCheckbox1.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 7: "+i+" Incorrecta");
     }   
    } 
