@@ -20,14 +20,16 @@ window.onload = function(){
  formElement=document.getElementById('myform');
  formElement.onsubmit=function(){
 	 inicializar();
-	 corregirTexto1();
-	 corregirTexto2();
-	 corregirSelect1();
-	 corregirSelect2();
-	 corregirCheckbox1();
-	 corregirCheckbox2();
-	 presentarNota();
-	 return false;
+   	 if (comprobar()){
+	  corregirTexto1();
+	  corregirTexto2();
+    	  corregirSelect1();
+	  corregirSelect2();
+    	  corregirCheckbox1();
+	  corregirCheckbox2();
+    	  presentarNota();
+   }
+   return false;
   }
 	 
  //LEER XML de xml/questions.xml
