@@ -24,7 +24,6 @@ window.onload = function(){
 	 corregirTexto2();
 	 corregirSelect1();
 	 corregirSelect2();
-	 corregirMultiSelect2();
 	 corregirCheckbox1();
 	 corregirCheckbox2();
 	 presentarNota();
@@ -193,48 +192,6 @@ function corregirSelect2(){
    nota +=1;
   }
   else darRespuestaHtml("Pregunta 4: Incorrecta");
-}
-
-//corregir select multiple
-function corregirMultiSelect1(){
-  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
-  var f=formElement;
-  var escorrecta = [];
-  for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-   if (f.color[i].checked) {
-    escorrecta[i]=false;     
-    for (j = 0; j < respuestasCheckbox1.length; j++) {
-     if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
-    }
-    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    if (escorrecta[i]) {
-     nota +=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
-    } else {
-     nota -=1.0/respuestasCheckbox.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 7: "+i+" Incorrecta");
-    }   
-   } 
-  }
-}
-
-function corregirMultiSelect2(){
-  //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
-  var f=formElement;
-  var text="Pregunta 5: ";
-  for (var i = 0; i < f.multiSel2.length; i++) { //por cada una de las opciones 
-   if (f.multiSel2[i].selected) { //si estan seleccionadas
-    var escorrecta = false;	        
-    for (var j = 0; j < respuestaMultiSelect2.length; j++) { //miramos si son correctas
-     if (i==respuestaMultiSelect2[j]) escorrecta[i]=true;
-     }
-    if (escorrecta) text+=f.respuestaMultiSelect2[i].text+" Correcta ";
-     nota +=1.0/respuestaMultiSelect2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml(text);
-    } else text+=f.respuestaMultiSelect2[i].text+" Incorrecta ";
-     nota -=1.0/respuestaMultiSelect2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml(text);   
-  }     
 }
 
 
