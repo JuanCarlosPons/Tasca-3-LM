@@ -211,10 +211,10 @@ function corregirCheckbox1(){
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
     if (escorrecta[i]) {
      nota +=1.0/respuestasCheckbox1.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 7: "+i+" correcta");    
+     darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
     } else {
      nota -=1.0/respuestasCheckbox1.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 7: "+i+" incorrecta");
+     darRespuestaHtml("Pregunta 7: "+i+" Incorrecta");
     }   
    } 
   }
@@ -233,10 +233,10 @@ function corregirCheckbox2(){
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
     if (escorrecta[i]) {
      nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 8: "+i+" correcta");    
+     darRespuestaHtml("Pregunta 8: "+i+" Correcta");    
     } else {
      nota -=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 8: "+i+" incorrecta");
+     darRespuestaHtml("Pregunta 8: "+i+" Incorrecta");
     }   
    } 
   }
