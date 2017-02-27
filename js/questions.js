@@ -213,6 +213,7 @@ function corregirCheckbox1(){
      nota +=1  
      darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
     } else {
+     nota -=0.5
      darRespuestaHtml("Pregunta 7: "+i+" Incorrecta");
     }   
    } 
@@ -231,10 +232,10 @@ function corregirCheckbox2(){
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
     if (escorrecta[i]) {
-     nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 8: "+i+" Correcta");    
+     nota +=1  
+     darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
     } else {
-     nota -=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
+     nota -=0.5   
      darRespuestaHtml("Pregunta 8: "+i+" Incorrecta");
     }   
    } 
@@ -384,12 +385,13 @@ function inicializar(){
 //Comprobar que se han introducido datos en el formulario
 function comprobar(){
    var f=formElement;
-   var checked=false;
+   var checked1=false;
+   var checked2=false
    for (i = 0; i < f.color1.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-      if (f.color1[i].checked) checked=true;
+      if (f.color1[i].checked1) checked1=true;
    }
    for (i = 0; i < f.color2.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-      if (f.color2[i].checked) checked=true;
+      if (f.color2[i].checked2) checked2=true;
    }
    if (f.elements[0].value=="") {
     f.elements[0].focus();
@@ -407,11 +409,11 @@ function comprobar(){
     f.elements[3].focus();
     alert("Responde todas las preguntas antes de corregir");
     return false;
-   } if (!checked) {    
+   } if (!checked1) {    
     document.getElementsByTagName("h4")[6].focus();
     alert("Responde todas las preguntas antes de corregir");
     return false;
-   } if (!checked) {
+   } if (!checked2) {
     document.getElementsByTagName("h4")[7].focus();
     alert("Responde todas las preguntas antes de corregir");
     return false;
