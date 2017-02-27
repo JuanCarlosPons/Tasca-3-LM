@@ -203,7 +203,7 @@ function corregirCheckbox1(){
   var f=formElement;
   var escorrecta = [];
   for (i = 0; i < f.color1.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-   if (f.color1[i].checked) {
+   if (f.color1[i].checked1) {
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox1.length; j++) {
      if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
@@ -225,7 +225,7 @@ function corregirCheckbox2(){
   var f=formElement;
   var escorrecta = [];
   for (i = 0; i < f.color2.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-   if (f.color2[i].checked) {
+   if (f.color2[i].checked2) {
     escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox2.length; j++) {
      if (i==respuestasCheckbox2[j]) escorrecta[i]=true;
