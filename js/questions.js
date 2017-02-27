@@ -406,11 +406,11 @@ function comprobar(){
     alert("Responde todas las preguntas antes de corregir");
     return false;
    } if (!checked) {    
-    document.getElementsByTagName("h3")[6].focus();
+    document.getElementsByTagName("h4")[6].focus();
     alert("Responde todas las preguntas antes de corregir");
     return false;
    } if (!checked) {
-    document.getElementsByTagName("h3")[7].focus();
+    document.getElementsByTagName("h4")[7].focus();
     alert("Responde todas las preguntas antes de corregir");
     return false;
    } else  return true;
