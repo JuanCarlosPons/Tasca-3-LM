@@ -208,12 +208,12 @@ function corregirCheckbox1(){
     for (j = 0; j < respuestasCheckbox1.length; j++) {
      if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
     }
-    //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
+    //si es la correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.  
     if (escorrecta[i]) {
      nota +=1  
      darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
     } else {
-     nota -=0.5
+     nota -=0.75
      darRespuestaHtml("Pregunta 7: "+i+" Incorrecta");
     }   
    } 
@@ -233,9 +233,9 @@ function corregirCheckbox2(){
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
     if (escorrecta[i]) {
      nota +=1  
-     darRespuestaHtml("Pregunta 7: "+i+" Correcta");    
+     darRespuestaHtml("Pregunta 8: "+i+" Correcta");    
     } else {
-     nota -=0.5   
+     nota -=0.75   
      darRespuestaHtml("Pregunta 8: "+i+" Incorrecta");
     }   
    } 
