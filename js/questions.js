@@ -201,15 +201,15 @@ function corregirSelect2(){
 function corregirCheckbox1(){
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
-  var escorrecta = [];
+  var escorrecta1 = [];
   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
    if (f.color[i].checked) {
-    escorrecta[i]=false;     
-    for (j = 1; j < respuestasCheckbox1.length; j++) {
-     if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
+    escorrecta1[i]=false;     
+    for (j = 0; j < respuestasCheckbox1.length; j++) {
+     if (i==respuestasCheckbox1[j]) escorrecta1[i]=true;
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    if (escorrecta[i]) {
+    if (escorrecta1[i]) {
      nota +=1.0/respuestasCheckbox1.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 7: "+i+" correcta");    
     } else {
@@ -223,15 +223,15 @@ function corregirCheckbox1(){
 function corregirCheckbox2(){
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
-  var escorrecta = [];
+  var escorrecta2 = [];
   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
    if (f.color[i].checked) {
-    escorrecta[i]=false;     
+    escorrecta2[i]=false;     
     for (j = 0; j < respuestasCheckbox2.length; j++) {
-     if (i==respuestasCheckbox2[j]) escorrecta[i]=true;
+     if (i==respuestasCheckbox2[j]) escorrecta2[i]=true;
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    if (escorrecta[i]) {
+    if (escorrecta2[i]) {
      nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 8: "+i+" correcta");    
     } else {
