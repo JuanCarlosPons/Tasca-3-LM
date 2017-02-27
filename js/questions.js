@@ -235,8 +235,8 @@ function corregirCheckbox2(){
      nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 8: "+i+" correcta");    
     } else {
-     nota -=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
-     darRespuestaHtml("Pregunta 8:"+i+" incorrecta");
+     nota -=0.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
+     darRespuestaHtml("Pregunta 8: "+i+" incorrecta");
     }   
    } 
   }
