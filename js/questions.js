@@ -386,7 +386,7 @@ function inicializar(){
 function comprobar(){
    var f=formElement;
    var checked1=false;
-   var checked2=false
+   var checked2=false;
    for (i = 0; i < f.color1.length; i++) {  //"color" es el nombre asignado a todos los checkbox
       if (f.color1[i].checked1) checked1=true;
    }
