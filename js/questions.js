@@ -205,7 +205,7 @@ function corregirCheckbox1(){
   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
    if (f.color[i].checked) {
     escorrecta[i]=false;     
-    for (j = 0; j < respuestasCheckbox1.length; j++) {
+    for (j = 1; j < respuestasCheckbox1.length; j++) {
      if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
@@ -235,7 +235,7 @@ function corregirCheckbox2(){
      nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 8: "+i+" correcta");    
     } else {
-     nota -=0.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
+     nota -=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 8: "+i+" incorrecta");
     }   
    } 
