@@ -384,7 +384,8 @@ function comprobar(){
    var checked=false;
    for (i = 0; i < f.color1.length; i++) {
       if (f.color1[i].checked) checked=true;
-   } for (i = 0; i < f.color2.length; i++) {
+   } 
+   for (i = 0; i < f.color2.length; i++) {
       if (f.color2[i].checked) checked=true;
    }
    if (f.elements[0].value=="") {
