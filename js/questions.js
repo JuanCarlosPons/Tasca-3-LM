@@ -201,15 +201,15 @@ function corregirSelect2(){
 function corregirCheckbox1(){
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
-  var escorrecta1 = [];
+  var escorrecta = [];
   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-   if (f.color[i].checked) {
-    escorrecta1[i]=false;     
+   if (f.color1[i].checked) {
+    escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox1.length; j++) {
-     if (i==respuestasCheckbox1[j]) escorrecta1[i]=true;
+     if (i==respuestasCheckbox1[j]) escorrecta[i]=true;
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    if (escorrecta1[i]) {
+    if (escorrecta[i]) {
      nota +=1.0/respuestasCheckbox1.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 7: "+i+" correcta");    
     } else {
@@ -223,15 +223,15 @@ function corregirCheckbox1(){
 function corregirCheckbox2(){
   //Para cada opción mira si está checkeada, si está checkeada mira si es correcta y lo guarda en un array escorrecta[]
   var f=formElement;
-  var escorrecta2 = [];
+  var escorrecta = [];
   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
    if (f.color[i].checked) {
-    escorrecta2[i]=false;     
+    escorrecta[i]=false;     
     for (j = 0; j < respuestasCheckbox2.length; j++) {
-     if (i==respuestasCheckbox2[j]) escorrecta2[i]=true;
+     if (i==respuestasCheckbox2[j]) escorrecta[i]=true;
     }
     //si es correcta sumamos y ponemos mensaje, si no es correcta restamos y ponemos mensaje.
-    if (escorrecta2[i]) {
+    if (escorrecta[i]) {
      nota +=1.0/respuestasCheckbox2.length;  //dividido por el número de respuestas correctas   
      darRespuestaHtml("Pregunta 8: "+i+" correcta");    
     } else {
@@ -302,10 +302,10 @@ function ponerDatosCheckboxHtml1(t,opt){
     var input = document.createElement("input");
     var label = document.createElement("label");
     label.innerHTML=opt[i];
-    label.setAttribute("for", "color_"+i);
+    label.setAttribute("for", "color1_"+i);
     input.type="checkbox";
-    input.name="color";
-    input.id="color_"+i;;    
+    input.name="color1";
+    input.id="color1_"+i;;    
     checkboxContainer.appendChild(input);
     checkboxContainer.appendChild(label);
     checkboxContainer.appendChild(document.createElement("br"));
