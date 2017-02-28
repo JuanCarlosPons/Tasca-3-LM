@@ -1,12 +1,16 @@
-body,html {
-	margin:0px
-	}
 body {
 	font-family: Arial, Verdana;
 	width:96%;
 	padding-left:2%;
 	padding-right:2%
 	}
+
+body,html {
+	height: 100%;
+	margin: 0px;
+	}
+
+
 form {
 	padding: 2%;
 	background-color: #B4F4FC;
@@ -17,7 +21,7 @@ form {
 	max-width:150px;
 	height:10%;
 	display:inline-block;
-	float:center;
+	float:right;
 	margin:auto;
 }
 	
