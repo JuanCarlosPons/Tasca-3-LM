@@ -5,13 +5,25 @@ body,html {
 body {
 	font-family: Arial, Verdana;
 	}
+	
+form {
+	padding: 0% 2% 0% 2%;
+	border-left:1px solid #93A0A1;
+	border-right:1px solid #93A0A1;
+}
 
 .div-examen {
 	width:70%;
 	padding-left:15%;
 	padding-right:15%;
+	padding-top:2%;
 	background-color:#B4F4FC;
 	}
+	
+.div-examen h3 {
+	padding-bottom:1%;
+	text-align:center;
+}
 	
 #logo {
 	width:10%;
@@ -35,11 +47,3 @@ body {
 	color: white;
 	text-align: center;  
 }
-
-/* body,html{margin:0px} */
-
-/* body,input,select,label{font-size:2vw} */
-/* h3{font-size:3vw} */
-/* input,select{width:50%} */
-/* input[type=checkbox]{width:5%;zoom:1.5} */
-/* form{background-color:aliceblue;padding:3%} */
