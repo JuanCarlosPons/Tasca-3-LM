@@ -36,3 +36,8 @@ form {
 	height:100%;
 }
 	
+#resultadosDiv {
+	text-align:center;
+	margin-bottom:3%;
+	padding:3%;
+}
