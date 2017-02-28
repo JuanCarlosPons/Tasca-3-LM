@@ -51,3 +51,8 @@ form {
 	height:100%;
 	margin-left:25%;
 }
+
+#resultadosDiv {
+	text-align:center;
+	margin-bottom:3%;
+}
