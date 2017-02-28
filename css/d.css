@@ -50,3 +50,11 @@ form {
 	height:100%;
 	margin-left:25%;
 }
+
+#nota {
+	width:10%;
+	height:100px;
+	background-color:blue;
+	margin:auto;
+	float:left;
+}
