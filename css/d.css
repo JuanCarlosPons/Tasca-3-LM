@@ -1,9 +1,11 @@
-body,html {
-	margin: 0px;
-	}
-
 body {
 	font-family: Arial, Verdana;
+	}
+
+body,html {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
 	}
 	
 form {
@@ -12,41 +14,39 @@ form {
 	border-right:1px solid #93A0A1;
 }
 
+.div-cabecera {
+	width:100%;
+	height:20%;
+	background-color:white;
+	color: #1D646A;
+	text-align:center;
+}
+
+.div-cabecera h1 {
+	padding-right:10%;
+}
+
 .div-examen {
 	width:70%;
-	padding-left:15%;
-	padding-right:15%;
-	padding-top:2%;
+	padding:2% 15% 0 15%;
 	background-color:#B4F4FC;
 	}
 	
-.div-examen h3 {
+.div-examen h2 {
 	padding-bottom:1%;
 	text-align:center;
 }
 	
 #logo {
 	width:10%;
-	height:15%;
-	max-height:15%;
+	height:auto;
 	display:inline-block;
 	float:left;
-	margin-top:0px;
-	}
-	
-.div-cabecera h1 {
-	padding-left:10%;
+	margin:auto;
 }
 	
 #logo img {
 	width:100%;
 	height:100%;
-}
-
-.div-cabecera {
-	width:100%;
-	height:15%;
-	background-color:white;
-	color: #1D646A;
-	text-align:center;
+	margin-left:25%;
 }
