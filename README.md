@@ -13,6 +13,8 @@
     - Comprobar *multiSelect* y *Radio* no conseguido.
 4. Código __*Indent*__ en la rama *Master* y código __*Minify*__ en la rama secundaria *JuanCarlosPons-Proves* = **OK** 
 5. Multidispositivo = __OK__
-6. Validación HTML y CSS = __OK__
+6. Validación HTML y CSS = __OK__    
+    - Validación del HTML nos avisa (*Warnings*) de que tenemos etiquetas de título (h4) vacías, como bien sabemos.
+    
     
     
