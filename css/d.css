@@ -6,14 +6,14 @@ body {
 	font-family: Arial, Verdana;
 	}
 
-form {
+.div-examen {
 	width:70%;
 	padding-left:15%;
 	padding-right:15%;
 	background-color:#B4F4FC;
 	}
 	
-.logo {
+#logo {
 	width:10%;
 	height:10%;
 	margin:2%;
@@ -21,12 +21,12 @@ form {
 	margin-top:0px;
 	}
 	
-.logo img {
+#logo img {
 	width:100%;
 	height:100%;
 }
 
-.cabecera {
+.div-cabecera {
 	width:70%;
 	height:10%;
 	background-color:#4993FA;
@@ -35,3 +35,11 @@ form {
 	color: white;
 	text-align: center;  
 }
+
+/* body,html{margin:0px} */
+
+/* body,input,select,label{font-size:2vw} */
+/* h3{font-size:3vw} */
+/* input,select{width:50%} */
+/* input[type=checkbox]{width:5%;zoom:1.5} */
+/* form{background-color:aliceblue;padding:3%} */
