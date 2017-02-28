@@ -167,7 +167,7 @@ function corregirTexto2() {
     if (s == textoSecreto2) {
         darRespuestaHtml("Pregunta 2: Correcta");
         nota += 1;
-    } else darRespuestaHtml("Pregunta2: Incorrecta");
+    } else darRespuestaHtml("Pregunta 2: Incorrecta");
 }
 
 function corregirSelect1() {
